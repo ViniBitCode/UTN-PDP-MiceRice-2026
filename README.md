@@ -33,18 +33,3 @@ wollok run
 ```
 
 El sitio publicado **no** puede servir el juego por sí solo.
-
-## Deploy en Netlify
-
-El repo ya incluye [`netlify.toml`](netlify.toml) con el build command, el directorio de
-publicación (`dist/mice-rice-site/browser`) y el redirect de SPA. Alcanza con:
-
-1. Subir este proyecto a un repo de Git.
-2. En Netlify: **Add new site → Import an existing project** y elegir el repo.
-3. Netlify detecta el `netlify.toml` y no hay que configurar nada más.
-
-Para verificar el build localmente:
-
-```bash
-npm run build
-```
