@@ -1,0 +1,67 @@
+.demo-page {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.demo-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.demo-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.warning {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 60rem;
+}
+
+.warning-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.warning strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.warning p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.stage {
+  width: 100%;
+}
+
+.frame-scaler {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #0c0a09;
+  box-shadow: 0 24px 70px -24px rgb(0 0 0 / 0.7);
+}
+
+.frame-scaler iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  transform-origin: top left;
+  background: #0c0a09;
+}

@@ -1,0 +1,35 @@
+<main class="demo-page">
+  <header class="demo-header">
+    <a class="btn btn-ghost" routerLink="/">← Volver al showcase</a>
+    <h1>Mice <span class="accent">Rice</span> — Demo</h1>
+  </header>
+
+  <aside class="warning" role="note">
+    <span class="warning-icon" aria-hidden="true">⚠️</span>
+    <div>
+      <strong>El juego corre en un servidor local de Wollok.</strong>
+      <p>
+        Esta página no puede servir el juego por sí sola: para verlo acá tenés que tener el
+        servidor levantado en tu máquina, corriendo <code>wollok run</code> dentro del repo del
+        juego. Cuando esté escuchando en <code>{{ config.gameLocalUrl }}</code>, el juego aparece
+        abajo. Si ves un recuadro vacío o un error, el servidor no está corriendo.
+      </p>
+    </div>
+  </aside>
+
+  <div class="stage" #stage>
+    <div
+      class="frame-scaler"
+      [style.width.px]="config.gameWidth * scale()"
+      [style.height.px]="config.gameHeight * scale()"
+    >
+      <iframe
+        [src]="gameUrl"
+        [width]="config.gameWidth"
+        [height]="config.gameHeight"
+        [style.transform]="'scale(' + scale() + ')'"
+        title="Mice Rice corriendo en el servidor local de Wollok"
+      ></iframe>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,55 @@
+<main class="page">
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="hero-kicker">Wollok Game · Paradigmas de Programación · UTN FRBA</p>
+    <h1 class="hero-title">Mice&nbsp;<span class="accent">Rice</span></h1>
+    <p class="hero-subtitle">
+      Juego en Wollok para practicar el Paradigma Orientado a Objetos. Futuro GOTY.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" [href]="config.repoUrl" target="_blank" rel="noopener">
+        Ver el código
+      </a>
+      <a class="btn btn-ghost" routerLink="/demo">Probar la demo →</a>
+    </div>
+    <div class="hero-cat" aria-hidden="true">🐱</div>
+  </header>
+
+  <!-- Correlo local -->
+  <section class="section" appReveal>
+    <h2 class="section-title"><span class="accent">01</span> Correlo local</h2>
+    <p class="section-lead">
+      El juego corre con el CLI de Wollok. Cuatro comandos y ya estás cazando ratones:
+    </p>
+    <div class="code-block">
+      <button
+        type="button"
+        class="copy-btn"
+        (click)="copyCommands()"
+        [class.copied]="copied()"
+      >
+        {{ copied() ? '✓ Copiado' : 'Copiar' }}
+      </button>
+      <pre><code>{{ runCommands }}</code></pre>
+    </div>
+    <p class="section-note">
+      Después abrí <code>{{ config.gameLocalUrl }}</code> en el navegador,
+      o directamente <a routerLink="/demo">la página de demo</a>.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      Hecho por
+      <a [href]="githubProfileUrl" target="_blank" rel="noopener">{{ config.authorName }}</a>
+      para Paradigmas de Programación · UTN FRBA
+    </p>
+    <p>
+      <a [href]="config.repoUrl" target="_blank" rel="noopener">Repositorio del juego</a>
+      ·
+      <a [href]="githubProfileUrl" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+</main>

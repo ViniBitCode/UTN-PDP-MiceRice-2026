@@ -1,0 +1,11 @@
+# Configuración de deploy en Netlify para el sitio de Mice Rice (Angular 21)
+
+[build]
+  command = "npm run build"
+  publish = "dist/mice-rice-site/browser"
+
+# SPA: cualquier ruta la resuelve el router de Angular
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
