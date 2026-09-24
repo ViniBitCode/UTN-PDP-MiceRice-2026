@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "sync-game": "node scripts/sync-game.mjs"
   },
   "private": true,
   "packageManager": "npm@11.9.0",
@@ -18,7 +19,9 @@
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "wollok-ts": "4.3.0",
+    "wollok-web-tools": "2.1.1"
   },
   "devDependencies": {
     "@angular/build": "^21.2.3",

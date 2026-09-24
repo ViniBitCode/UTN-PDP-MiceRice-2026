@@ -4,32 +4,27 @@
     <h1>Mice <span class="accent">Rice</span> — Demo</h1>
   </header>
 
-  <aside class="warning" role="note">
-    <span class="warning-icon" aria-hidden="true">⚠️</span>
-    <div>
-      <strong>El juego corre en un servidor local de Wollok.</strong>
-      <p>
-        Esta página no puede servir el juego por sí sola: para verlo acá tenés que tener el
-        servidor levantado en tu máquina, corriendo <code>wollok run</code> dentro del repo del
-        juego. Cuando esté escuchando en <code>{{ config.gameLocalUrl }}</code>, el juego aparece
-        abajo. Si ves un recuadro vacío o un error, el servidor no está corriendo.
-      </p>
-    </div>
-  </aside>
+  <p class="demo-hint">
+    El juego corre completamente en tu navegador con <code>wollok-ts</code>, sin ningún servidor.
+    Navegá los menúes con <strong>click</strong>, movete con las <strong>flechas</strong> o
+    <strong>WASD</strong> y volvé atrás con <strong>Backspace</strong>. Hacé click en el tablero
+    primero para que reciba las teclas.
+  </p>
 
-  <div class="stage" #stage>
-    <div
-      class="frame-scaler"
-      [style.width.px]="config.gameWidth * scale()"
-      [style.height.px]="config.gameHeight * scale()"
-    >
-      <iframe
-        [src]="gameUrl"
-        [width]="config.gameWidth"
-        [height]="config.gameHeight"
-        [style.transform]="'scale(' + scale() + ')'"
-        title="Mice Rice corriendo en el servidor local de Wollok"
-      ></iframe>
-    </div>
+  <div
+    class="stage"
+    #stage
+    [style.aspect-ratio]="config.gameWidth + ' / ' + config.gameHeight"
+    [class.ready]="status() === 'running'"
+  >
+    @if (status() === 'loading') {
+      <div class="overlay" role="status">Cargando el juego…</div>
+    }
+    @if (status() === 'error') {
+      <div class="overlay error" role="alert">
+        <strong>No se pudo arrancar el juego.</strong>
+        <p>{{ error() }}</p>
+      </div>
+    }
   </div>
 </main>

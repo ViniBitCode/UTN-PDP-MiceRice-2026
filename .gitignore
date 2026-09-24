@@ -42,3 +42,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Clon local del repo del juego (fuente de `npm run sync-game`)
+/mice-rice-game

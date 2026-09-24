@@ -1,0 +1,10 @@
+import wollok.game.*
+import objects.game.game_settings.*
+import objects.scenes.main_menu_scene.*
+
+program TbouGame {
+  game_settings.initial_settings()
+  mainMenu.show()
+  game.start()
+}
+

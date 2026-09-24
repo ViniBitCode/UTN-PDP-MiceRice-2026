@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "cc40c0db-1934-412c-9a90-e5e3b53eaac5"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -22,6 +23,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "game-index.js",
+                "input": "node_modules/wollok-web-tools/dist/web",
+                "output": "/game/lib"
               }
             ],
             "styles": [
